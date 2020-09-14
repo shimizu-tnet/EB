@@ -1,0 +1,46 @@
+﻿@model JuniorTennis.Mvc.Features.Players.RequestStateViewModel
+
+@{
+    ViewData["Title"] = "選手登録申込状況";
+}
+
+<h2>選手登録申込状況一覧</h2>
+
+@foreach (var reservationNumber in Model.ReservationNumbers)
+{
+
+    <dl class="horizontal">
+        <dt>種類</dt>
+        <dd>@Model.RequestPlayersMap[reservationNumber][0].RequestTypeName</dd>
+        <dt>申込日時</dt>
+        <dd>@Model.RequestPlayersMap[reservationNumber][0].RequestedDateTime</dd>
+        <dt>予約番号</dt>
+        <dd>@reservationNumber</dd>
+    </dl>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>登録状態</th>
+                <th>氏名</th>
+                <th>フリガナ</th>
+                <th>カテゴリー</th>
+                <th>性別</th>
+                <th>生年月日</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var requestPlayer in Model.RequestPlayersMap[reservationNumber])
+            {
+                <tr>
+                    <td>@requestPlayer.ApproveStateName</td>
+                    <td>@requestPlayer.PlayerName</td>
+                    <td>@requestPlayer.PlayerNameKana</td>
+                    <td>@requestPlayer.CategoryName</td>
+                    <td>@requestPlayer.GenderName</td>
+                    <td>@requestPlayer.BirthDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
