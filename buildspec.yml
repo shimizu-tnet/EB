@@ -7,4 +7,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory:'./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/'
+  base-directory: './JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/'
