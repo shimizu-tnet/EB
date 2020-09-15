@@ -4,7 +4,8 @@ phases:
   build:
     commands:
       - dotnet publish
+      - zip -r site.zip ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish
+      - zip -r webapplication1.zip site.zip aws-windows-deployment-manifest.json
 artifacts:
   files:
-    - '**/*'
-  base-directory: './JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/'
+    - 'webapplication1.zip'
