@@ -6,7 +6,5 @@ phases:
       - dotnet publish
 artifacts:
   files:
-    - ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/**/*
-    - ./appspec.yml
-    - ./before-install.bat
-    - ./after-install.bat
+    - **/*
+  base-directory:./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/
