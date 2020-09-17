@@ -6,8 +6,7 @@ phases:
       - dotnet publish
       - cd ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish
       - zip -r ../../../../../site.zip *
-      - cd ../../../../../
-      - zip -r webapplication1.zip site.zip aws-windows-deployment-manifest.json
 artifacts:
   files:
-    - 'webapplication1.zip'
+    - 'site.zip'
+    - 'aws-windows-deployment-manifest.json'
