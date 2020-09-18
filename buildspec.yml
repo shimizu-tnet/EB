@@ -4,9 +4,9 @@ phases:
   build:
     commands:
       - dotnet publish
-      - cp -r .ebextensions/ ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish/
+      - cp -f web.config ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish
       - cd ./JuniorTennis.Mvc/bin/Debug/netcoreapp3.1/publish
-      - zip -r ../../../../../site.zip ./
+      - zip -r ../../../../../site.zip *
 artifacts:
   files:
     - 'site.zip'
